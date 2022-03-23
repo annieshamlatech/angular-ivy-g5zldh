@@ -1,0 +1,34 @@
+<div>
+  <div class="flipclock" *ngIf="timer$ | async as timer">
+    <div id="container" class="flipclock">
+      <ul class="flip " *ngFor="let time of timer">
+        <li
+          *ngFor="let item of time.split(''); let i = index"
+          [class.d1]="i === 1"
+          [class.d2]="i === 0"
+        >
+          <section class="ready">
+            <div class="up">
+              <div class="shadow"></div>
+              <div class="inn">{{ item }}</div>
+            </div>
+            <div class="down">
+              <div class="shadow"></div>
+              <div class="inn">{{ item }}</div>
+            </div>
+          </section>
+          <section class="active">
+            <div class="up">
+              <div class="shadow"></div>
+              <div class="inn">{{ item }}</div>
+            </div>
+            <div class="down">
+              <div class="shadow"></div>
+              <div class="inn">{{ item }}</div>
+            </div>
+          </section>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
